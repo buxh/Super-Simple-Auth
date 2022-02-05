@@ -1,0 +1,56 @@
+[
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "mysql.connector",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mysql.connector",
+        "description": "mysql.connector",
+        "detail": "mysql.connector",
+        "documentation": {}
+    },
+    {
+        "label": "gethwid",
+        "kind": 2,
+        "importPath": "auth",
+        "description": "auth",
+        "peekOfCode": "def gethwid():\n    HWID = subprocess.check_output(\"wmic csproduct get uuid\").decode().split(\"\\n\")[1].strip()\n    return HWID\ndef check():\n    try:\n        cursor.execute(f\"\"\"SELECT HWID FROM UserData WHERE HWID = {gethwid()}\"\"\")\n        if cursor.fetchall():\n            print(\"In database\")\n    except Exception as e:\n        print(e)",
+        "detail": "auth",
+        "documentation": {}
+    },
+    {
+        "label": "check",
+        "kind": 2,
+        "importPath": "auth",
+        "description": "auth",
+        "peekOfCode": "def check():\n    try:\n        cursor.execute(f\"\"\"SELECT HWID FROM UserData WHERE HWID = {gethwid()}\"\"\")\n        if cursor.fetchall():\n            print(\"In database\")\n    except Exception as e:\n        print(e)\nif __name__ == \"__main__\":\n    check()",
+        "detail": "auth",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "auth",
+        "description": "auth",
+        "peekOfCode": "db = mysql.connector.connect(user=None, password=None,\n                              host=None,\n                              database=None, port=None)\ncursor = db.cursor()\ndef gethwid():\n    HWID = subprocess.check_output(\"wmic csproduct get uuid\").decode().split(\"\\n\")[1].strip()\n    return HWID\ndef check():\n    try:\n        cursor.execute(f\"\"\"SELECT HWID FROM UserData WHERE HWID = {gethwid()}\"\"\")",
+        "detail": "auth",
+        "documentation": {}
+    },
+    {
+        "label": "cursor",
+        "kind": 5,
+        "importPath": "auth",
+        "description": "auth",
+        "peekOfCode": "cursor = db.cursor()\ndef gethwid():\n    HWID = subprocess.check_output(\"wmic csproduct get uuid\").decode().split(\"\\n\")[1].strip()\n    return HWID\ndef check():\n    try:\n        cursor.execute(f\"\"\"SELECT HWID FROM UserData WHERE HWID = {gethwid()}\"\"\")\n        if cursor.fetchall():\n            print(\"In database\")\n    except Exception as e:",
+        "detail": "auth",
+        "documentation": {}
+    }
+]
